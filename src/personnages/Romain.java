@@ -37,6 +37,11 @@ public class Romain {
 		
 	}
 	public static void main(String[] args) {
+		Romain romain=new Romain("romain1",10);
+		
+		System.out.println(romain.prendreParole());
+		romain.parler("hi");
+		romain.recevoirCoup(2);
 		
 	}
 }

@@ -1,7 +1,5 @@
 package personnages;
 
-import java.util.Iterator;
-
 public class Gaulois {
 	private String nom;
 	private int force;
@@ -38,8 +36,8 @@ public class Gaulois {
 
 	public void boirePotion(int forcePotion) {
 
-		force *= forcePotion;
-		this.parler(" Merci Druide, je sens que ma force est "+forcePotion+" fois décuplée.");
+		force = forcePotion;
+		this.parler(" Merci Druide, je sens que ma force est " + forcePotion + " fois décuplée.");
 
 	}
 

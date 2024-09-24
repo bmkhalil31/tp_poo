@@ -36,8 +36,11 @@ public class Romain {
 		}
 		
 	}
+	private boolean forcePositive() {
+		return force>=0;
+	}
 	public static void main(String[] args) {
-		Romain romain=new Romain("romain1",10);
+		Romain romain=new Romain("romain1",-6);
 		
 		System.out.println(romain.prendreParole());
 		romain.parler("hi");

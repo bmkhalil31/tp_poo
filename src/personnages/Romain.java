@@ -9,6 +9,7 @@ public class Romain {
 	public Romain(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
+		assert forcePositive();
 	}
 
 
@@ -26,6 +27,8 @@ public class Romain {
 		return "le romain "+nom+":";
 	}
 	public void recevoirCoup(int forceCoup) {
+		assert forcePositive();
+		int forceInitial=force;
 		force-=forceCoup;
 		if (force>0) {
 			parler("Aie");
@@ -34,13 +37,20 @@ public class Romain {
 			parler("J'abondonne.....");
 
 		}
+		assert forceDiminue(forceInitial);
 		
 	}
+	private boolean forceDiminue(int forceInitial) {
+		
+		return force<forceInitial;
+	}
+
+
 	private boolean forcePositive() {
 		return force>=0;
 	}
 	public static void main(String[] args) {
-		Romain romain=new Romain("romain1",-6);
+		Romain romain=new Romain("romain1",6);
 		
 		System.out.println(romain.prendreParole());
 		romain.parler("hi");
